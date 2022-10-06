@@ -2,6 +2,19 @@ import java.util.Random;
 
 public class PassengerCar extends Car implements Competing {
 
+    public enum BodyType {
+        SEDAN,
+        HATCHBACK,
+        COUPE,
+        UNIVERSAL,
+        SUV,
+        CROSSOVER,
+        PICKUP,
+        VAN,
+        MINIVAN
+    }
+
+
     public PassengerCar(String brand, String model, double engineVolume) {
         super(brand, model, engineVolume);
     }

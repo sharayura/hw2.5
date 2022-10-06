@@ -6,10 +6,11 @@ public class Main {
         var bmw = new PassengerCar("BMW", "X5", 3.6);
         var kia = new PassengerCar("Kia", "Rio", 1.6);
 
-        var kamazTruck = new Truck("Камаз", "5320", 10.8);
-        var volvoTruck = new Truck("Volvo", "FH 2012", 12.7);
-        var belazTruck = new Truck("Белаз", "75600", 77.5);
-        var mercedesTruck = new Truck("Mercedes", "Actros", 15.6);
+        var kamazTruck = new Truck("Камаз", "5320", 10.8, Truck.LoadCapacity.N2);
+        var volvoTruck = new Truck("Volvo", "FH 2012", 12.7, Truck.LoadCapacity.N2);
+        var belazTruck = new Truck("Белаз", "75600", 77.5, Truck.LoadCapacity.N3);
+        var mercedesTruck = new Truck("Mercedes", "Actros", 15.6, Truck.LoadCapacity.N1);
+        System.out.println(volvoTruck.getCapacityType().getInfo());
 
         var ikarusBus = new Bus("Икарус", "250", 10.3);
         var volvoBus = new Bus("Volvo", "B10M", 9.6);

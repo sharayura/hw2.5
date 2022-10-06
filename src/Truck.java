@@ -2,8 +2,31 @@ import java.util.Random;
 
 public class Truck extends Car implements Competing{
 
-    public Truck(String brand, String model, double engineVolume) {
+    public enum LoadCapacity {
+        N1("с полной массой до 3,5 тонн"),
+        N2("с полной массой свыше 3,5 до 12 тонн"),
+        N3("с полной массой свыше 12 тонн");
+
+        private final String info;
+
+        LoadCapacity(String info) {
+            this.info = info;
+        }
+
+        public String getInfo() {
+            return info;
+        }
+    }
+
+    private final LoadCapacity capacityType;
+
+    public Truck(String brand, String model, double engineVolume, LoadCapacity capacityType) {
         super(brand, model, engineVolume);
+        this.capacityType = capacityType;
+    }
+
+    public LoadCapacity getCapacityType() {
+        return capacityType;
     }
 
     @Override
