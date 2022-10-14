@@ -19,10 +19,12 @@ public class Truck extends Car implements Competing{
     }
 
     private final LoadCapacity capacityType;
+    private DriverC driver;
 
-    public Truck(String brand, String model, double engineVolume, LoadCapacity capacityType) {
+    public Truck(String brand, String model, double engineVolume, LoadCapacity capacityType, DriverC driver) {
         super(brand, model, engineVolume);
         this.capacityType = capacityType;
+        this.driver = driver;
     }
 
     public LoadCapacity getCapacityType() {
