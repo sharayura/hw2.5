@@ -1,7 +1,32 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public abstract class Car {
     private final String brand;
     private final String model;
     private double engineVolume;
+
+    private Set<Sponsor> sponsors = new HashSet<>();
+    private Set<Driver> drivers = new HashSet<>();
+    private Set<Mechanic> mechanics = new HashSet<>();
+
+    private static Set<Car> allCars = new HashSet<>();
+
+    public static Set<Car> getAllCars() {
+        return allCars;
+    }
+
+    public Set<Driver> getDrivers() {
+        return drivers;
+    }
+
+    public Set<Mechanic> getMechanics() {
+        return mechanics;
+    }
+
+    public Set<Sponsor> getSponsors() {
+        return sponsors;
+    }
 
     public Car(String brand, String model, double engineVolume) {
         if (brand != null && !brand.isBlank()) {
@@ -15,6 +40,7 @@ public abstract class Car {
             this.model = "Noname";
         }
         setEngineVolume(engineVolume);
+        allCars.add(this);
     }
 
     public String getBrand() {
@@ -40,6 +66,11 @@ public abstract class Car {
     public abstract void start();
 
     public abstract void stop();
+
+    @Override
+    public String toString() {
+        return brand + " " + model;
+    }
 
     // Все лишние параметры и методы, которые не указаны в данном задании
 }

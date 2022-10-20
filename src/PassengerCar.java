@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Random;
 
 public class PassengerCar extends Car implements Competing {
@@ -15,26 +14,9 @@ public class PassengerCar extends Car implements Competing {
         MINIVAN
     }
 
-
-    private ArrayList<Sponsor> sponsors;
-    private DriverB driver;
-
-    public void setDriver(DriverB driver) {
-        this.driver = driver;
-    }
-
-    public DriverB getDriver() {
-        return driver;
-    }
-
-    public ArrayList<Sponsor> getSponsors() {
-        return sponsors;
-    }
-
     public PassengerCar(String brand, String model, double engineVolume) {
 
         super(brand, model, engineVolume);
-        this.sponsors = new ArrayList<>();
     }
 
     @Override
