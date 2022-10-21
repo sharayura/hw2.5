@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public abstract class Car {
@@ -70,6 +71,19 @@ public abstract class Car {
     @Override
     public String toString() {
         return brand + " " + model;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return Objects.equals(brand, car.brand) && Objects.equals(model, car.model);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, model);
     }
 
     // Все лишние параметры и методы, которые не указаны в данном задании
